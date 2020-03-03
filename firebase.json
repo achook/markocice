@@ -1,0 +1,44 @@
+{
+  "hosting": {
+    "public": "dist",
+    
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+
+    "redirects": [ {
+      "source": "/images/:image*",
+      "destination": "https://storage.googleapis.com/bogatynia/images/:image",
+      "type": 302
+    } ],
+
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+
+    "headers": [ {
+      "source": "**/*.@(js|css)",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=2419200"
+      } ]
+    },
+    {
+      "source": "index.html",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=86400"
+      } ]
+    } ],
+
+    "cleanUrls": true,
+
+    "trailingSlash": false
+
+  }
+}

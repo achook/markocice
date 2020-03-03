@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+- "10"
+
+cache: yarn
+
+install:
+- yarn install
+
+script:
+- yarn test
+- yarn build
+
+deploy:
+  provider: firebase
+  token:
+    secure: NOZst4BXqJ9/82yC3TA3soGr0mG863oWrS6a6Oy+XoGsHKFbcFqglx9j84VKI3Iu6oSacIEaVEsR9tWdPpcsDhFK0SKGtdUX2ITUKjbAMMFVDzBxLR/nayhYn8wQfsHN99HOQDPgX7JiGF7CIRlILb9vr3fU+r3OV/MUeAwyQtO09DRS//aIKiNwMSXCoWVW0bbUzLgyHnDMeHRRrlEfmkVjMUxTqe9tt2Zhu1w5PpABDgYPB340IBRs1hmHHAGz80A2/syKltkqQiN13svMD7XqtmYMGMLSM9ZzHLZ0JKVHAzCP2Egl9efpLC4Foq++ls6+Y3PDsfHLMfdKgxO3b1LkQNINW+mEg5eHYIujVs5vLxRYN0FvcRBcyOdqbNcEGKK39FgxZBH2nyVuXXe/dvE5C9eHBlDIFWzT3xtq0z+MxWlCK9GCOeTyerjx1MzoOP8OZnRoUH/kFuSSggxRyl6LeJOZvVAlHaao1eosYF4/cebUUkyTiY3AYwWv7F63dFRCp7ehppUiGFu1ZDkqExP2WVRP4i6PVWG3LqNg2eArh3WKQctVUv+YJdoAeykq5+skfaKwV92zC9g2pcCwVLn/BTdXq4TVib+CCVqI6bjVhe+56OOyd9yLb5TiKHj6pT0O5Np5oNxjReYuDWSbWuQqnemCGriuSDuKFEmsPKs=
+
+  skip_cleanup: true
+  on:
+    branch: master

@@ -11,8 +11,8 @@
       router-link.search--results-cell.search--results-cell__id.search--results-cell-value__id(:to="{name: 'home', params: {id: row.id}}") {{ row.id }}
       .search--results-cell.search--results-cell__year {{ row.year }}
       .search--results-cell.search--results-cell__place(v-if="row.region && row.country") {{ `${row.region}, ${row.country}` }}
-      .search--results-cell.search--results-cell__place(v-else-if="row.region && !row.country") {{ row.region }}
-      .search--results-cell.search--results-cell__place(v-else-if="!row.region && row.country") {{ row.country }}
+      .search--results-cell.search--results-cell__place(v-else-if="row.region") {{ row.region }}
+      .search--results-cell.search--results-cell__place(v-else-if="row.country") {{ row.country }}
       .search--results-cell.search--results-cell__place(v-else)
       .search--results-cell.search--results-cell__desc {{ row.desc }}
 </template>

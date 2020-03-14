@@ -178,6 +178,7 @@ export default {
               })
 
               this.map.setCenter(position)
+              // this.map.setZoom(10)
             } else {
               this.isMapAvailable = false
             }

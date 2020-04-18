@@ -3,7 +3,7 @@ const webpack = require('webpack')
 function setupAPI () {
   switch (process.env.NODE_ENV) {
     case 'production':
-      return "'https://api.pamiatki.kucza.xyz/'"
+      return "'https://api.pamiatki.achook.dev/'"
     default:
       return "'http://192.168.1.148:8081/'"
   }
